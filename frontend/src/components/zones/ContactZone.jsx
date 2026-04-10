@@ -5,7 +5,9 @@ import axios from 'axios';
 import soundManager from '../../utils/sounds';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = BACKEND_URL
+  ? `${BACKEND_URL}/api`
+  : (process.env.NODE_ENV === 'development' ? 'http://localhost:8000/api' : '/api');
 
 export const ContactZone = () => {
   const ref = useRef(null);
@@ -20,12 +22,23 @@ export const ContactZone = () => {
     setStatus({ type: null, message: '' });
 
     try {
-      await axios.post(`${API}/contact`, formData);
-      setStatus({ type: 'success', message: 'Message sent successfully!' });
-      soundManager.playSuccess();
-      setFormData({ name: '', email: '', message: '' });
+      const response = await axios.post(`${API}/contact`, formData);
+      if (response?.data?.email_sent) {
+        setStatus({ type: 'success', message: 'Message sent successfully!' });
+        soundManager.playSuccess();
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus({
+          type: 'error',
+          message: 'Message saved, but email delivery is not configured yet. Please contact eng.ufoo@gmail.com directly.'
+        });
+      }
     } catch (error) {
-      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+      const backendMessage = error?.response?.data?.detail;
+      setStatus({
+        type: 'error',
+        message: backendMessage || 'Failed to send message. Please try again.'
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -84,7 +97,7 @@ export const ContactZone = () => {
             {/* Contact Links */}
             <div className="space-y-6">
               <a
-                href="mailto:support@kshitijdinni.e"
+                href="mailto:eng.ufoo@gmail.com"
                 className="flex items-center gap-4 group"
                 onMouseEnter={() => soundManager.playHover()}
                 data-testid="contact-email"
@@ -95,7 +108,7 @@ export const ContactZone = () => {
                 <div>
                   <p className="font-mono text-xs text-[var(--text-muted)]">EMAIL</p>
                   <p className="font-body text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">
-                    support@kshitijdinni.e
+                    eng.ufoo@gmail.com
                   </p>
                 </div>
               </a>

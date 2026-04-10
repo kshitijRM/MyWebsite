@@ -40,7 +40,7 @@ Create a next-generation, cinematic, interactive 3D portfolio website inspired b
 RESEND_API_KEY=re_...       # For email notifications
 GITHUB_TOKEN=ghp_...        # For higher GitHub API limits (optional)
 SENDER_EMAIL=onboarding@resend.dev
-NOTIFICATION_EMAIL=support@kshitijdinni.e
+SUPPORT_EMAIL=eng.ufoo@gmail.com
 ```
 
 ## P0/P1/P2 Features Remaining

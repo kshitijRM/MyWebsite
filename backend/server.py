@@ -27,10 +27,12 @@ try:
     if RESEND_API_KEY:
         resend.api_key = RESEND_API_KEY
     SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
+    SUPPORT_EMAIL = os.environ.get('SUPPORT_EMAIL', 'eng.ufoo@gmail.com')
 except ImportError:
     resend = None
     RESEND_API_KEY = None
     SENDER_EMAIL = None
+    SUPPORT_EMAIL = None
 
 # GitHub token
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
@@ -146,9 +148,10 @@ async def submit_contact(form: ContactForm):
             
             params = {
                 "from": SENDER_EMAIL,
-                "to": [os.environ.get('NOTIFICATION_EMAIL', 'support@kshitijdinni.e')],
+                "to": [SUPPORT_EMAIL or os.environ.get('NOTIFICATION_EMAIL', 'eng.ufoo@gmail.com')],
                 "subject": f"Portfolio Contact: {form.name}",
-                "html": html_content
+                "html": html_content,
+                "reply_to": form.email
             }
             
             await asyncio.to_thread(resend.Emails.send, params)

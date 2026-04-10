@@ -68,7 +68,7 @@ export const Navigation = ({ currentSection, scrollToSection, isVisible }) => {
 
         {/* CTA */}
         <a
-          href="mailto:support@kshitijdinni.e"
+          href="mailto:eng.ufoo@gmail.com"
           className="magnetic-btn text-xs py-3 px-6"
           onMouseEnter={() => soundManager.playHover()}
           data-testid="nav-cta"

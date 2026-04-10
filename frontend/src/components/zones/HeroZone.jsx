@@ -104,7 +104,7 @@ export const HeroZone = ({ scrollToSection }) => {
             <span className="font-mono text-xs tracking-wider hidden md:inline">LINKEDIN</span>
           </a>
           <a
-            href="mailto:support@kshitijdinni.e"
+            href="mailto:eng.ufoo@gmail.com"
             className="group flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
             onMouseEnter={() => soundManager.playHover()}
             data-testid="email-link"
