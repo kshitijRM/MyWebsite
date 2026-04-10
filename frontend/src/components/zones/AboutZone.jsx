@@ -1,11 +1,19 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { MapPin, Calendar, Briefcase } from 'lucide-react';
+import { MapPin, Calendar, Briefcase, Building2, ExternalLink } from 'lucide-react';
 import soundManager from '../../utils/sounds';
 
 const PROFILE_IMAGE = 'https://customer-assets.emergentagent.com/job_kinetic-space/artifacts/zmhyo149_me.png';
 
 const EXPERIENCE = [
+  {
+    role: 'Founder & CEO',
+    company: 'Renuka Digital Solutions',
+    period: '2021 - Present',
+    description: 'Running my own digital solutions business, providing web development, digital marketing, and IT consulting services to clients.',
+    isOwner: true,
+    location: 'https://maps.app.goo.gl/mJbx6fJsk2ukn57x9'
+  },
   {
     role: 'Senior Full Stack Developer',
     company: 'Tech Innovations Inc.',
@@ -138,12 +146,20 @@ export const AboutZone = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.15 }}
-                  className="glass-panel p-6 relative group"
+                  className={`glass-panel p-6 relative group ${exp.isOwner ? 'border-[var(--accent-primary)] border' : ''}`}
                   onMouseEnter={() => soundManager.playHover()}
                   data-testid={`experience-${index}`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute -left-3 top-6 w-2 h-2 bg-[var(--accent-primary)] rounded-full" />
+                  <div className={`absolute -left-3 top-6 w-2 h-2 rounded-full ${exp.isOwner ? 'bg-[var(--accent-primary)] animate-pulse' : 'bg-[var(--accent-primary)]'}`} />
+                  
+                  {/* Owner Badge */}
+                  {exp.isOwner && (
+                    <div className="absolute -top-3 right-4 px-3 py-1 bg-[var(--accent-primary)] text-[var(--bg-primary)] font-mono text-xs tracking-wider flex items-center gap-2">
+                      <Building2 size={12} />
+                      MY BUSINESS
+                    </div>
+                  )}
                   
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                     <div>
@@ -158,9 +174,24 @@ export const AboutZone = () => {
                       {exp.period}
                     </span>
                   </div>
-                  <p className="font-body text-sm text-[var(--text-secondary)]">
+                  <p className="font-body text-sm text-[var(--text-secondary)] mb-3">
                     {exp.description}
                   </p>
+                  
+                  {/* Location Link for Business */}
+                  {exp.location && (
+                    <a
+                      href={exp.location}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[var(--accent-primary)] hover:text-[var(--text-primary)] transition-colors font-mono text-xs"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <MapPin size={14} />
+                      View Location
+                      <ExternalLink size={12} />
+                    </a>
+                  )}
                 </motion.div>
               ))}
             </div>
