@@ -244,12 +244,29 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-secondary);
-  transition: color 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   cursor: pointer;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-primary);
+  transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .nav-link:hover {
   color: var(--accent-primary);
+  text-shadow: 0 0 20px rgba(224, 255, 0, 0.3);
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* Animations */
