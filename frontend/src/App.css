@@ -57,12 +57,88 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 
-/* Glass morphism enhancement */
+/* Glass Panel Enhanced */
 .glass-panel {
   background: rgba(10, 10, 10, 0.6);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(224, 255, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(224, 255, 0, 0.05);
+}
+
+/* Premium Card Hover */
+.premium-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(224, 255, 0, 0.1), transparent);
+  transition: left 0.7s ease;
+}
+
+.premium-card:hover::before {
+  left: 100%;
+}
+
+/* Metric Counter Glow */
+.metric-glow {
+  text-shadow: 0 0 20px rgba(224, 255, 0, 0.5);
+}
+
+/* Service Card Shine */
+@keyframes shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shine-effect {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+}
+
+.shine-effect:hover {
+  animation: shine 1.5s ease-in-out;
+}
+
+/* Testimonial Quote Animation */
+@keyframes float-quote {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-5px) rotate(-3deg); }
+}
+
+.quote-float {
+  animation: float-quote 4s ease-in-out infinite;
+}
+
+/* Tech Stack Hover Glow */
+.tech-pill {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-pill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(224, 255, 0, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-pill:hover::after {
+  opacity: 1;
 }
 
 /* Glow text animation */
