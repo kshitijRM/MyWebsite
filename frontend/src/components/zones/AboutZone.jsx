@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { MapPin, Calendar, Briefcase } from 'lucide-react';
 import soundManager from '../../utils/sounds';
 
-const PROFILE_IMAGE = 'https://images.unsplash.com/photo-1774016591221-d3e8e7ebdd16?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBzaWxob3VldHRlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc1ODEwMzIyfDA&ixlib=rb-4.1.0&q=85&w=400';
+const PROFILE_IMAGE = 'https://customer-assets.emergentagent.com/job_kinetic-space/artifacts/zmhyo149_me.png';
 
 const EXPERIENCE = [
   {
@@ -76,7 +76,7 @@ export const AboutZone = () => {
                 <img
                   src={PROFILE_IMAGE}
                   alt="Kshitij Dinni"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
                 />
               </div>
               {/* Decorative Frame */}
