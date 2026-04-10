@@ -1,0 +1,99 @@
+{
+  "theme": "DARK",
+  "archetype": "7",
+  "archetype_name": "Electric & Neon (Sophisticated Cinematic Variant)",
+  "design_philosophy": "Making complex 3D technology appear simple and magical. Deep Vantablack environments with stark, highly emissive neon accents. Break the grid with 3D spatial navigation. The interface is a lens looking into a game-like environment. Focus on bloom, depth of field, and physics-based motion. Do not use generic purple or teal. Embrace sharp edges and high-end technical luxury.",
+  "colors": {
+    "background": {
+      "primary": "#030303",
+      "secondary": "#0A0A0A",
+      "glass": "rgba(10, 10, 10, 0.4)"
+    },
+    "text": {
+      "primary": "#F2F2F2",
+      "secondary": "#8A8A8A",
+      "muted": "#525252"
+    },
+    "accents": {
+      "primary": "#E0FF00",
+      "secondary": "#FF003C",
+      "glow": "rgba(224, 255, 0, 0.5)"
+    },
+    "borders": {
+      "subtle": "rgba(255, 255, 255, 0.05)",
+      "active": "rgba(224, 255, 0, 0.4)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Unbounded, sans-serif",
+      "body": "Outfit, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl tracking-tighter font-black",
+      "h2": "text-4xl md:text-5xl tracking-tight font-bold",
+      "h3": "text-2xl md:text-3xl tracking-tight font-medium",
+      "h4": "text-xl font-medium",
+      "body": "text-base leading-relaxed font-light",
+      "mono_label": "text-xs tracking-[0.2em] uppercase font-mono"
+    }
+  },
+  "layout_and_spacing": {
+    "philosophy": "Cinematic framing. Elements should feel like they exist in a 3D volume, not a flat 2D page. Generous margins, optical alignment, full viewport height sections (100vh) for scrolling.",
+    "container_padding": "p-8 md:p-12 lg:p-24",
+    "section_spacing": "gap-24 md:gap-40",
+    "grid_system": "Spatial free-form positioning for 3D elements behind the glass. Use Bento grid strictly for data/info panels."
+  },
+  "surfaces": {
+    "glass_panels": "backdrop-blur-2xl bg-black/40 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-none",
+    "project_cards": "bg-transparent border border-white/10 hover:border-[#E0FF00]/50 transition-colors duration-500 rounded-none",
+    "glow_effects": "drop-shadow-[0_0_15px_rgba(224,255,0,0.6)]"
+  },
+  "motion_and_interactions": {
+    "hover_states": "Text color shifts to Volt Yellow (#E0FF00). Subtle scale up (1.02) and border glow.",
+    "page_transitions": "WebGL shader displacement or cinematic camera sweeps (React Three Fiber).",
+    "scroll": "Lenis smooth scroll is MANDATORY. Tie scroll progress to 3D camera position and timeline.",
+    "micro_interactions": "Magnetic buttons, cursor-following glow, text scrambling on hover (using JetBrains Mono)."
+  },
+  "components": {
+    "header": {
+      "style": "Fixed, full-width, totally transparent but with a top gradient mask. Navigation links use mono-labels.",
+      "behavior": "Mix blend mode difference or backdrop blur if resting over busy 3D elements."
+    },
+    "hero_zone": {
+      "style": "Full 100vh. Massive 'Floating Glowing Text' created with 3D text geometry (drei Text3D) or heavily glowing HTML text. High bloom.",
+      "composition": "Centralized, dramatic lighting. A true 3D scene."
+    },
+    "project_zone": {
+      "style": "3D Panels. Fetch repos dynamically. UI overlays are glassmorphic cards sitting on top of a React Three Fiber canvas.",
+      "interaction": "Clicking a panel sweeps the 3D camera to focus on it."
+    },
+    "skills_zone": {
+      "style": "Orbiting 3D spheres or nodes representing skills (React Three Fiber + Physics). User can drag/toss them."
+    },
+    "about_zone": {
+      "style": "Glass Panels floating in 3D space. Sharp, terminal-like aesthetics with cinematic backlighting."
+    },
+    "contact_zone": {
+      "style": "Terminal/Cyberpunk form. Glass UI with sharp edges. Neon borders on input focus."
+    }
+  },
+  "media_and_assets": {
+    "profile_photo_placeholder": "https://images.unsplash.com/photo-1774016591221-d3e8e7ebdd16?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBzaWxob3VldHRlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc1ODEwMzIyfDA&ixlib=rb-4.1.0&q=85",
+    "abstract_project_bg_1": "https://images.unsplash.com/photo-1699951896659-2bca947121f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMDNkJTIwZ2xvd2luZyUyMGRhcmt8ZW58MHx8fHwxNzc1ODEwMzIzfDA&ixlib=rb-4.1.0&q=85",
+    "abstract_project_bg_2": "https://images.unsplash.com/photo-1710438399422-2fca27686bcd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMDNkJTIwZ2xvd2luZyUyMGRhcmt8ZW58MHx8fHwxNzc1ODEwMzIzfDA&ixlib=rb-4.1.0&q=85",
+    "abstract_project_bg_3": "https://images.unsplash.com/photo-1736843638363-aeb3924788e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2xvd2luZyUyMGRhcmt8ZW58MHx8fHwxNzc1ODEwMzIzfDA&ixlib=rb-4.1.0&q=85",
+    "icons": "lucide-react"
+  },
+  "instructions_to_main_agent": [
+    "INSTALLATION: Add '@react-three/fiber', '@react-three/drei', 'three', '@react-three/postprocessing', 'framer-motion', and 'lenis' via npm/yarn.",
+    "3D SCENE SETUP: Ensure there is a single full-screen `<Canvas>` element fixed in the background. Route scroll events to the 3D camera using Drei's ScrollControls or Framer Motion's useScroll.",
+    "POSTPROCESSING: Use `<EffectComposer>` with `<Bloom>` (luminanceThreshold: 1, intensity: 1.5) and `<DepthOfField>` from @react-three/postprocessing.",
+    "HTML OVERLAYS: Use Drei's `<Html>` component for UI attached to 3D objects, or use standard z-indexed fixed overlays synchronized with framer-motion.",
+    "STYLING: Strictly enforce the deep black background with Volt Yellow (#E0FF00) and Neon Crimson (#FF003C) highlights. Avoid purple and teal completely.",
+    "FONTS: Import 'Unbounded', 'Outfit', and 'JetBrains Mono' from Google Fonts into the base css or index.html.",
+    "GITHUB REPOS: Fetch from GitHub API. Use standard fallback mock data if API fails. Display as 3D floating glass panels or high-end 2D UI with 3D background.",
+    "DATA ATTRIBUTES: Add 'data-testid' to all interactive elements."
+  ]
+}
