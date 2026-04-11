@@ -11,7 +11,7 @@
 ---
 
 ## 🚀 Live Demo
-🔗 https://kshitijdinni.me *(Replace this with your deployed link)*
+🔗 https://kshitijdinni.me
 
 ---
 
