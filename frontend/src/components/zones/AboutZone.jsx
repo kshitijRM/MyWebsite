@@ -404,25 +404,6 @@ export const AboutZone = () => {
             })}
           </div>
 
-          {/* Services */}
-          <div className="mb-20">
-            <motion.h4
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="font-heading text-2xl text-[var(--text-primary)] mb-8 flex items-center gap-3"
-            >
-              <Zap size={24} className="text-[var(--accent-primary)]" />
-              Services We Offer
-            </motion.h4>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {BUSINESS.services.map((service, index) => (
-                <ServiceCard key={service.title} service={service} index={index} />
-              ))}
-            </div>
-          </div>
-
           {/* Tech Stack */}
           <div className="mb-20">
             <motion.h4
